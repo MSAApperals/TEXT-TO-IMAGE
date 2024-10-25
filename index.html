@@ -34,71 +34,90 @@
         }
 
         /* Header Styles */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-            z-index: 10; /* Ensure header is above the container */
-        }
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between; /* Logo on the left, menu on the right */
+    align-items: center;
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 100; /* Ensure it's above other elements */
+    background-color: transparent; /* Semi-transparent background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
 
-        .logo {
-            max-width: 120px; /* Adjust the size as needed */
-            height: auto;
-            display: block;
-            object-fit: contain; /* Ensures logo scales well without distortion */
-        }
+/* Logo Adjustments */
+.logo {
+    max-width: 100px; /* Adjust size of the logo */
+    height: auto;
+    object-fit: contain;
+}
 
-        .menu-icon {
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-            transition: color 0.3s;
-        }
+/* Menu Icon Adjustments */
+.menu-icon {
+    cursor: pointer;
+    font-size: 30px; /* Increase the size of the menu icon */
+    color: white;
+    transition: color 0.3s;
+    padding: 10px; /* Padding for better spacing */
+    margin-left: auto; /* Push the icon to the far right */
+}
 
-        .menu-icon:hover {
-            color: #ff61a6;
-        }
+/* Menu Icon Hover Effect */
+.menu-icon:hover {
+    color: #ff61a6;
+}
 
-        /* Menu Dropdown Styles */
-        .dropdown {
-            display: none;
-            position: absolute;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+/* Dropdown Menu Positioning */
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 10px; /* Align the dropdown with the menu icon */
+    top: 50px; /* Position it below the header */
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    padding: 10px;
+}
 
-        .dropdown a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-        }
+/* Dropdown Menu Items */
+.dropdown a {
+    display: flex;
+    padding: 10px 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Slightly dark background for readability */
+    text-decoration: none;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
 
-        .dropdown a:hover {
-            background: #ff61a6;
-        }
+/* Dropdown Menu Item Hover Effect */
+.dropdown a:hover {
+    background: #ff61a6; /* Highlight on hover */
+}
+
 
         /* Center the container */
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            z-index: 10; /* Ensure the container is above the overlay */
-            margin: -22px auto; /* Adjust this value to move the container up or down */
-            overflow-y: auto; /* Allow vertical scrolling */
-            max-height: 80vh; /* Maximum height for scrolling */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 400px;
+        top: 10vh; /* Moved closer to the top */
+        position: relative; /* Ensure this applies */
+        text-align: center;
+        z-index: 10;
+        margin: 0 auto;
+        overflow-y: auto;
+        max-height: 80vh;
         }
         /* Heading Styles */
         h1 {
@@ -159,16 +178,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
             display: none;
             z-index: 5;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px); /* Apply blur effect to the background */
         }
 
         /* Download and View Button Styles */
-        #downloadButton, #viewButton {
+        #downloadButton, #viewButton, #homebutton{
             display: none; /* Initially hidden */
             background-color: #ff61a6;
             color: white;
@@ -259,7 +278,9 @@
                 <a id="supportButton" href="https://wa.me/923165218095?text=Hello%2C%20I%20need%20assistance" target="_blank" style="display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 16px; transition: background-color 0.3s; margin-top: 10px;">
                     <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Support
                 </a>
-                
+                <a id="homebutton" href="home.html" style="display: inline-block; background-color: #4285F4; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 16px; transition: background-color 0.3s; margin-top: 10px;">
+                    <i class="fas fa-home" style="margin-right: 8px;"></i> HOME 
+                </a>
                 <a id="contactButton" href="mailto:msaaperals@gmail.com?subject=Support Request&body=Hello,%20I%20need%20assistance." style="display: inline-block; background-color: #4285F4; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 16px; transition: background-color 0.3s; margin-top: 10px;">
                     <i class="fas fa-envelope" style="margin-right: 8px;"></i> Contact Us
                 </a>
@@ -276,14 +297,14 @@
         <!-- Lottie Animation above the Heading -->
         <dotlottie-player src="https://lottie.host/7cb778a9-ed21-4d56-9928-6a75501d897e/GYEqDQYdHu.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
         
-        <h1>AI Image Generator</h1>
+        <h1 id="generatorTitle">AI Image Generator</h1>
         <textarea id="inputText" placeholder="Enter a description..."></textarea>
-        <button id="generateButton">Generate Image</button>
+        <button id="generateButton">Generate Image 🤖</button>
         <img id="outputImage" src="" alt="Generated Image">
         <p class="error" id="errorMessage"></p>
-        <button id="downloadButton">Download Image</button>
-        <button id="viewButton">View Image</button>
-        <button id="backButton">Back</button>
+        <button id="downloadButton"><i class="fas fa-download"> Download Image</i></button>
+        <button id="viewButton"><i class="fas fa-eye"> View Image</i></button>
+        <button id="backButton">&#8592; Back</button>
     </div>
 
     <div id="imageModal" class="modal">
@@ -295,122 +316,139 @@
 
     <script >  // Menu Toggle Functionality
         document.getElementById('menuIcon').addEventListener('click', () => {
-           const dropdownMenu = document.getElementById('dropdownMenu');
-           dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-       });
-
-       // Generate Image functionality
-       document.getElementById('generateButton').addEventListener('click', async () => {
-           const inputText = document.getElementById('inputText').value;
-           const loadingOverlay = document.getElementById('loadingOverlay');
-           const outputImage = document.getElementById('outputImage');
-           const downloadButton = document.getElementById('downloadButton');
-           const viewButton = document.getElementById('viewButton');
-           const backButton = document.getElementById('backButton');
-           const errorMessage = document.getElementById('errorMessage');
-
-           if (!inputText) {
-               errorMessage.textContent = 'Please enter a description.';
-               return;
-           }
-
-           errorMessage.textContent = ''; // Clear previous error
-           loadingOverlay.style.display = 'flex'; // Show loading overlay
-           outputImage.style.display = 'none'; // Hide image
-
-           try {
-               const imageBlob = await query({"inputs": inputText});
-               const imageUrl = URL.createObjectURL(imageBlob);
-               outputImage.src = imageUrl;
-               outputImage.style.display = 'block'; // Show image
-               outputImage.style.opacity = '1'; // Fade in effect
-               outputImage.onload = () => {
-                   outputImage.style.transition = 'opacity 1s ease-in'; // Apply transition
-               };
-
-               // Show download and view buttons
-               downloadButton.style.display = 'block';
-               viewButton.style.display = 'block';
-               backButton.style.display = 'block'; // Hide back button
-
-               // Hide loading overlay
-               loadingOverlay.style.display = 'none';
-           } catch (error) {
-               console.error('Error:', error);
-               errorMessage.textContent = 'Error generating image. Please try again.';
-               loadingOverlay.style.display = 'none'; // Hide loading overlay
-           }
-       });
-
-       async function query(data) {
-           const response = await fetch(
-               "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
-               {
-                   headers: {
-                       Authorization: "Bearer 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", // Replace with your token
-                       "Content-Type": "application/json",
-                   },
-                   method: "POST",
-                   body: JSON.stringify(data),
-               }
-           );
-           const result = await response.blob();
-           return result;
-       }
-
-       // Download Image functionality
-       document.getElementById('downloadButton').addEventListener('click', () => {
-           const image = document.getElementById('outputImage');
-           const link = document.createElement('a');
-           link.href = image.src;
-           link.download = 'your-image.jpg'; // Set default file name
-           document.body.appendChild(link);
-           link.click();
-           document.body.removeChild(link);
-           
-       });
-
-       // View Image functionality
-       document.getElementById('viewButton').addEventListener('click', () => {
-           const image = document.getElementById('outputImage');
-           window.open(image.src, '_blank');
-           document.getElementById('backButton').style.display = 'block'; // Show back button when viewing
-       });
-
-       // Back Button functionality
-       document.getElementById('backButton').addEventListener('click', () => {
-           document.getElementById('outputImage').style.display = 'none'; // Hide the image
-           document.getElementById('downloadButton').style.display = 'none'; // Hide download button
-           document.getElementById('viewButton').style.display = 'none'; // Hide view button
-           document.getElementById('backButton').style.display = 'none'; // Hide back button
-           document.getElementById('inputText').value = ''; // Clear input
-       });
-
-       // Support Modal functionality
-       document.getElementById('supportLink').addEventListener('click', (e) => {
-           e.preventDefault(); // Prevent default anchor behavior
-           document.getElementById('supportModal').style.display = 'flex'; // Show modal
-       });
-
-       document.getElementById('closeSupportModal').addEventListener('click', () => {
-           document.getElementById('supportModal').style.display = 'none'; // Close modal
-       });
-
-       // Contact Us Modal functionality
-       document.getElementById('contactLink').addEventListener('click', (e) => {
-           e.preventDefault(); // Prevent default anchor behavior
-           document.getElementById('contactModal').style.display = 'flex'; // Show modal
-       });
-
-       document.getElementById('closeContactModal').addEventListener('click', () => {
-           document.getElementById('contactModal').style.display = 'none'; // Close modal
-       });
-
-       // Close modal on click outside of content
-       window.onclick = function(event) {
-           if (event.target === document.getElementById('supportModal') || event.target === document.getElementById('contactModal')) {
-               event.target.style.display = "none";
-           }
-       };</script>
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // Generate Image functionality
+        document.getElementById('generateButton').addEventListener('click', async () => {
+            const inputText = document.getElementById('inputText').value;
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const outputImage = document.getElementById('outputImage');
+            const downloadButton = document.getElementById('downloadButton');
+            const viewButton = document.getElementById('viewButton');
+            const backButton = document.getElementById('backButton');
+            const errorMessage = document.getElementById('errorMessage');
+            const textarea = document.getElementById('inputText'); // Reference to the textarea
+            const title = document.getElementById('generatorTitle'); // Reference to the title
+        
+            if (!inputText) {
+                errorMessage.textContent = 'Please enter a description.';
+                return;
+            }
+        
+            errorMessage.textContent = ''; // Clear previous error
+            loadingOverlay.style.display = 'flex';
+            document.body.style.filter = 'blur(5px)'; // Show loading overlay
+            outputImage.style.display = 'none'; // Hide image
+        
+            try {
+                const imageBlob = await query({ "inputs": inputText });
+                const imageUrl = URL.createObjectURL(imageBlob);
+                outputImage.src = imageUrl;
+                outputImage.style.display = 'block'; // Show image
+                outputImage.style.opacity = '1'; // Fade in effect
+                outputImage.onload = () => {
+                    outputImage.style.transition = 'opacity 1s ease-in'; // Apply transition
+                };
+        
+                // Hide textarea and generate button
+                textarea.style.display = 'none'; // Hide the description input
+                document.getElementById('generateButton').style.display = 'none'; // Hide generate button
+        
+                // Change the title to "Your Image"
+                title.innerText = 'Your Image'; // Change title text
+        
+                // Show download and view buttons
+                document.body.style.filter = 'none';
+                downloadButton.style.display = 'block';
+                viewButton.style.display = 'block';
+                backButton.style.display = 'block'; // Show back button
+        
+                // Hide loading overlay
+                loadingOverlay.style.display = 'none';
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.textContent = 'Error generating image. Please try again.';
+                loadingOverlay.style.display = 'none'; // Hide loading overlay
+            }
+        });
+        
+        // Query Function
+        async function query(data) {
+            const response = await fetch(
+                "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
+                {
+                    headers: {
+                        Authorization: "Bearer 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", // Replace with your token
+                        "Content-Type": "application/json",
+                    },
+                    method: "POST",
+                    body: JSON.stringify(data),
+                }
+            );
+            const result = await response.blob();
+            return result;
+        }
+        
+        // Download Image functionality
+        document.getElementById('downloadButton').addEventListener('click', () => {
+            const image = document.getElementById('outputImage');
+            const link = document.createElement('a');
+            link.href = image.src;
+            link.download = 'your-image.jpg'; // Set default file name
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        // View Image functionality
+        document.getElementById('viewButton').addEventListener('click', () => {
+            const image = document.getElementById('outputImage');
+            window.open(image.src, '_blank');
+            document.getElementById('backButton').style.display = 'block'; // Show back button when viewing
+        });
+        
+        // Back Button functionality
+        document.getElementById('backButton').addEventListener('click', () => {
+            document.getElementById('outputImage').style.display = 'none'; // Hide the image
+            document.getElementById('downloadButton').style.display = 'none'; // Hide download button
+            document.getElementById('viewButton').style.display = 'none'; // Hide view button
+            document.getElementById('backButton').style.display = 'none'; // Hide back button
+            document.getElementById('inputText').value = ''; // Clear input
+            document.getElementById('inputText').style.display = 'block'; // Show textarea again
+            document.getElementById('generateButton').style.display = 'block'; // Show generate button again
+            document.getElementById('generatorTitle').innerText = 'AI Image Generator'; // Reset title
+        });
+        
+        // Support Modal functionality
+        document.getElementById('supportButton').addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            document.getElementById('supportModal').style.display = 'flex'; // Show modal
+        });
+        
+        document.getElementById('closeSupportModal').addEventListener('click', () => {
+            document.getElementById('supportModal').style.display = 'none'; // Close modal
+        });
+        
+        // Contact Us Modal functionality
+        document.getElementById('contactButton').addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            document.getElementById('contactModal').style.display = 'flex'; // Show modal
+        });
+        
+        document.getElementById('closeContactModal').addEventListener('click', () => {
+            document.getElementById('contactModal').style.display = 'none'; // Close modal
+        });
+        
+        // Close modal on click outside of content
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('supportModal') || event.target === document.getElementById('contactModal')) {
+                event.target.style.display = "none";
+            }
+        };
+        
+        
+        </script>
 </body>
 </html>
